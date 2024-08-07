@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radionics Web App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input[type="text"],
+        input[type="file"],
+        input[type="number"],
+        input[type="range"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .column {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+        }
+        .full-width {
+            flex: 0 0 100%;
+        }
+        .slider {
+            margin: 10px 0;
+        }
+        .premium-look {
+            background-color: #fff;
+            border: 2px solid #e6e6e6;
+            padding: 20px;
+            border-radius: 10px;
+        }
+ 
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        .form-group img {
+            display: block;
+            max-width: 100%;
+            margin-top: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+<div class="instructions">
+    <h2>Radionics Web App Instructions</h2>
+    <p>Welcome to the Radionics Web App. This app allows you to perform radionics sessions with a variety of advanced features. Follow these instructions to get started:</p>
+
+    <h3>Step 1: Target Person's Information</h3>
+    <ul>
+        <li><strong>Target Person's Name</strong>: Enter the full name of the target person in the text field provided.</li>
+        <li><strong>Target Person's Photograph</strong>: Upload a clear photograph of the target person. Click on the "Choose File" button and select the image file from your device.</li>
+    </ul>
+
+    <h3>Step 2: Set Up Radionics Features</h3>
+    <p>Configure the following features to customize your radionics session:</p>
+    <ul>
+        <li><strong>Rate Dial</strong>
+            <ul>
+                <li>Use the slider to adjust the rate dial from 0 to 100. This setting fine-tunes the resonance frequency.</li>
+            </ul>
+        </li>
+        <li><strong>Power Adjustment</strong>
+            <ul>
+                <li>Adjust the power level using the slider. Set the desired power level from 0 to 100.</li>
+            </ul>
+        </li>
+        <li><strong>Amplification</strong>
+            <ul>
+                <li>Use the slider to set the amplification level from 0 to 100. This controls the strength of the signal.</li>
+            </ul>
+        </li>
+        <li><strong>Frequency</strong>
+            <ul>
+                <li>Enter the desired frequency in the text field. This is the specific frequency at which the radionics session will operate.</li>
+            </ul>
+        </li>
+        <li><strong>Intensity</strong>
+            <ul>
+                <li>Adjust the intensity level using the slider from 0 to 100. This controls the intensity of the radionics output.</li>
+            </ul>
+        </li>
+        <li><strong>Trend</strong>
+            <ul>
+                <li>Select a trend from the dropdown menu. Available options are:
+                    <ul>
+                        <li>Teleportation</li>
+                        <li>Telekinesis</li>
+                        <li>Materialisation</li>
+                        <li>Shapeshifting</li>
+                        <li>Invincibility</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Energy Pattern</strong>
+            <ul>
+                <li>Enter the energy pattern in the text field. This defines the specific energy configuration for the session.</li>
+            </ul>
+        </li>
+        <li><strong>Potentizing</strong>
+            <ul>
+                <li>Use the slider to set the potentizing level from 0 to 100. This enhances the energy output.</li>
+            </ul>
+        </li>
+        <li><strong>Frequency Sweep</strong>
+            <ul>
+                <li>Adjust the frequency sweep using the slider from 0 to 100. This setting allows the frequency to vary within a range.</li>
+            </ul>
+        </li>
+        <li><strong>Witness Plate</strong>
+            <ul>
+                <li>Upload an image of the witness plate. Click on the "Choose File" button and select the image file from your device.</li>
+            </ul>
+        </li>
+        <li><strong>Output Plate</strong>
+            <ul>
+                <li>Enter details of the output plate in the text field provided. This is where the energy will be directed.</li>
+            </ul>
+        </li>
+        <li><strong>Scanning</strong>
+            <ul>
+                <li>Adjust the scanning level using the slider from 0 to 100. This controls the depth and range of the scanning process.</li>
+            </ul>
+        </li>
+        <li><strong>Feedback Mechanism</strong>
+            <ul>
+                <li>Enter details of the feedback mechanism in the text field. This system monitors and adjusts the radionics session in real-time.</li>
+            </ul>
+        </li>
+        <li><strong>Modulation</strong>
+            <ul>
+                <li>Use the slider to set the modulation level from 0 to 100. This controls the variation in the radionics signal.</li>
+            </ul>
+        </li>
+        <li><strong>Field Analysis</strong>
+            <ul>
+                <li>Enter details for field analysis in the text field. This allows for detailed examination of the energy fields.</li>
+            </ul>
+        </li>
+        <li><strong>Harmonic Balancing</strong>
+            <ul>
+                <li>Adjust the harmonic balancing using the slider from 0 to 100. This ensures the energies are in harmonic balance.</li>
+            </ul>
+        </li>
+        <li><strong>Multi-wave Oscillator</strong>
+            <ul>
+                <li>Use the slider to set the level for the multi-wave oscillator from 0 to 100. This generates multiple frequencies simultaneously.</li>
+            </ul>
+        </li>
+        <li><strong>Remote Operation</strong>
+            <ul>
+                <li>Enter details for remote operation in the text field. This enables control of the radionics session from a distance.</li>
+            </ul>
+        </li>
+        <li><strong>Energy Field Mapping</strong>
+            <ul>
+                <li>Enter details for energy field mapping in the text field. This provides a visual representation of the energy fields.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Step 3: Start Radionics Session</h3>
+    <ul>
+        <li>After configuring all the features, click the "Start Radionics Session" button to initiate the session.</li>
+    </ul>
+
+    <p>Follow these steps to effectively use the Radionics Web App and customize your radionics sessions for optimal results.</p>
+</div>
+
+    
+    
+    <div class="container premium-look">
+        <h1>Radionics Web App</h1>
+       <form id="radionicsForm">
+        <div class="form-group">
+            <label for="targetName">Target Person's Name:</label>
+            <input type="text" id="targetName" name="targetName" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="targetPhoto">Target Person's Photograph:</label>
+            <input type="file" id="targetPhoto" name="targetPhoto" accept="image/*" class="form-control">
+            <img id="photoPreview" src="" alt="Target Photograph" style="display: none;">
+        </div>
+
+        <div class="form-group">
+            <label for="witnessPlate">Witness Plate (Upload a representation of the target):</label>
+            <input type="file" id="witnessPlate" name="witnessPlate" accept="image/*" class="form-control">
+            <img id="witnessPreview" src="" alt="Witness Plate" style="display: none;">
+        </div>
+            <div class="row">
+                <div class="column">
+                    <div class="form-group">
+                        <label for="rate-dial">Rate Dial</label>
+                        <input type="range" id="rate-dial" name="rate-dial" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="power-adjustment">Power Adjustment</label>
+                        <input type="range" id="power-adjustment" name="power-adjustment" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="amplification">Amplification</label>
+                        <input type="range" id="amplification" name="amplification" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+            <label for="frequency">Frequency (Hz):</label>
+            <input type="text" id="frequency" name="frequency" class="form-control">
+        </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="intensity">Intensity</label>
+                        <input type="range" id="intensity" name="intensity" min="0" max="100" class="slider">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label for="trend">Trend</label>
+                <select id="trend" name="trend">
+                    <option value="teleportation">Teleportation</option>
+                    <option value="telekinesis">Telekinesis</option>
+                    <option value="materialisation">Materialisation</option>
+                    <option value="shapeshifting">Shapeshifting</option>
+                    <option value="invincibility">Invincibility</option>
+                </select>
+            </div>
+            <div class="form-group full-width">
+                <label for="energy-pattern">Energy Pattern</label>
+                <input type="text" id="energy-pattern" name="energy-pattern" placeholder="Enter energy pattern">
+            </div>
+            <div class="form-group full-width">
+                <label for="potentizing">Potentizing</label>
+                <input type="range" id="potentizing" name="potentizing" min="0" max="100" class="slider">
+            </div>
+            <div class="form-group full-width">
+                <label for="frequency-sweep">Frequency Sweep</label>
+                <input type="range" id="frequency-sweep" name="frequency-sweep" min="0" max="100" class="slider">
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="form-group">
+                        <label for="witness-plate">Witness Plate</label>
+                        <input type="file" id="witness-plate" name="witness-plate" accept="image/*">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="output-plate">Output Plate</label>
+                        <input type="text" id="output-plate" name="output-plate" placeholder="Enter output plate details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="scanning">Scanning</label>
+                        <input type="range" id="scanning" name="scanning" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="feedback-mechanism">Feedback Mechanism</label>
+                        <input type="text" id="feedback-mechanism" name="feedback-mechanism" placeholder="Enter feedback mechanism details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="modulation">Modulation</label>
+                        <input type="range" id="modulation" name="modulation" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="field-analysis">Field Analysis</label>
+                        <input type="text" id="field-analysis" name="field-analysis" placeholder="Enter field analysis details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="harmonic-balancing">Harmonic Balancing</label>
+                        <input type="range" id="harmonic-balancing" name="harmonic-balancing" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="multi-wave-oscillator">Multi-wave Oscillator</label>
+                        <input type="range" id="multi-wave-oscillator" name="multi-wave-oscillator" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="remote-operation">Remote Operation</label>
+                        <input type="text" id="remote-operation" name="remote-operation" placeholder="Enter remote operation details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="energy-field-mapping">Energy Field Mapping</label>
+                        <input type="text" id="energy-field-mapping" name="energy-field-mapping" placeholder="Enter energy field mapping details">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group full-width">
+               <button type="button" id="startSession" class="btn">Start Radionics Session</button>
+    </form>
+
+    <video id="radionicsVideo" src="https://github.com/MysticWaveTech/Tsiddo/raw/main/54859-479655524_small.mp4" loop style="display: none; width: 100%;"></video>
+</div>
+
+<script>
+    document.getElementById('targetPhoto').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const photoPreview = document.getElementById('photoPreview');
+            photoPreview.src = e.target.result;
+            photoPreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    });
+
+    document.getElementById('witnessPlate').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const witnessPreview = document.getElementById('witnessPreview');
+            witnessPreview.src = e.target.result;
+            witnessPreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    });
+
+    document.getElementById('startSession').addEventListener('click', function() {
+        const frequency = document.getElementById('frequency').value;
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+        oscillator.connect(audioContext.destination);
+        oscillator.start();
+        
+        // Stop oscillator when user manually stops the session or page is closed
+        window.addEventListener('beforeunload', function() {
+            oscillator.stop();
+        });
+
+        const video = document.getElementById('radionicsVideo');
+        video.style.display = 'block';
+        video.play();
+    });
+</script>
+    </div>
+</body>
+</html>
