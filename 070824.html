@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <title>Radionics Web App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input[type="text"],
+        input[type="file"],
+        input[type="number"],
+        input[type="range"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .column {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+        }
+        .full-width {
+            flex: 0 0 100%;
+        }
+        .slider {
+            margin: 10px 0;
+        }
+        .premium-look {
+            background-color: #fff;
+            border: 2px solid #e6e6e6;
+            padding: 20px;
+            border-radius: 10px;
+        }
+ 
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        .form-group img {
+            display: block;
+            max-width: 100%;
+            margin-top: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+
+</head>
+  
+  
+  
+</head>
+<body>
+
+      
+    <div class="container premium-look">
+        <h1>Radionics Web App</h1>
+       <form id="radionicsForm">
+        <div class="form-group">
+            <label for="targetName">Target Person's Name:</label>
+            <input type="text" id="targetName" name="targetName" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="targetPhoto">Target Person's Photograph:</label>
+            <input type="file" id="targetPhoto" name="targetPhoto" accept="image/*" class="form-control">
+            <img id="photoPreview" src="" alt="Target Photograph" style="display: none;">
+        </div>
+
+        <div class="form-group">
+            <label for="witnessPlate">Witness Plate (Upload a representation of the target):</label>
+            <input type="file" id="witnessPlate" name="witnessPlate" accept="image/*" class="form-control">
+            <img id="witnessPreview" src="" alt="Witness Plate" style="display: none;">
+        </div>
+            <div class="row">
+                <div class="column">
+                    <div class="form-group">
+                        <label for="rate-dial">Rate Dial</label>
+                        <input type="range" id="rate-dial" name="rate-dial" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="power-adjustment">Power Adjustment</label>
+                        <input type="range" id="power-adjustment" name="power-adjustment" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="amplification">Amplification</label>
+                        <input type="range" id="amplification" name="amplification" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+            <label for="frequency">Frequency (Hz):</label>
+            <input type="text" id="frequency" name="frequency" class="form-control">
+        </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="intensity">Intensity</label>
+                        <input type="range" id="intensity" name="intensity" min="0" max="100" class="slider">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label for="trend">Trend</label>
+                <select id="trend" name="trend">
+                    <option value="teleportation">Teleportation</option>
+                    <option value="telekinesis">Telekinesis</option>
+                    <option value="materialisation">Materialisation</option>
+                    <option value="shapeshifting">Shapeshifting</option>
+                    <option value="invincibility">Invincibility</option>
+                </select>
+            </div>
+            <div class="form-group full-width">
+                <label for="energy-pattern">Energy Pattern</label>
+                <input type="text" id="energy-pattern" name="energy-pattern" placeholder="Enter energy pattern">
+            </div>
+            <div class="form-group full-width">
+                <label for="potentizing">Potentizing</label>
+                <input type="range" id="potentizing" name="potentizing" min="0" max="100" class="slider">
+            </div>
+            <div class="form-group full-width">
+                <label for="frequency-sweep">Frequency Sweep</label>
+                <input type="range" id="frequency-sweep" name="frequency-sweep" min="0" max="100" class="slider">
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="form-group">
+                        <label for="witness-plate">Witness Plate</label>
+                        <input type="file" id="witness-plate" name="witness-plate" accept="image/*">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="output-plate">Output Plate</label>
+                        <input type="text" id="output-plate" name="output-plate" placeholder="Enter output plate details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="scanning">Scanning</label>
+                        <input type="range" id="scanning" name="scanning" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="feedback-mechanism">Feedback Mechanism</label>
+                        <input type="text" id="feedback-mechanism" name="feedback-mechanism" placeholder="Enter feedback mechanism details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="modulation">Modulation</label>
+                        <input type="range" id="modulation" name="modulation" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="field-analysis">Field Analysis</label>
+                        <input type="text" id="field-analysis" name="field-analysis" placeholder="Enter field analysis details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="harmonic-balancing">Harmonic Balancing</label>
+                        <input type="range" id="harmonic-balancing" name="harmonic-balancing" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="multi-wave-oscillator">Multi-wave Oscillator</label>
+                        <input type="range" id="multi-wave-oscillator" name="multi-wave-oscillator" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="remote-operation">Remote Operation</label>
+                        <input type="text" id="remote-operation" name="remote-operation" placeholder="Enter remote operation details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="energy-field-mapping">Energy Field Mapping</label>
+                        <input type="text" id="energy-field-mapping" name="energy-field-mapping" placeholder="Enter energy field mapping details">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group full-width">
+               <button type="button" id="startSession" class="btn">Start Radionics Session</button>
+    </form>
+
+    <video id="radionicsVideo" src="https://github.com/MysticWaveTech/Tsiddo/raw/main/54859-479655524_small.mp4" loop style="display: none; width: 100%;"></video>
+</div>
+
+<script>
+    document.getElementById('targetPhoto').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const photoPreview = document.getElementById('photoPreview');
+            photoPreview.src = e.target.result;
+            photoPreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    });
+
+    document.getElementById('witnessPlate').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const witnessPreview = document.getElementById('witnessPreview');
+            witnessPreview.src = e.target.result;
+            witnessPreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    });
+
+    document.getElementById('startSession').addEventListener('click', function() {
+        const frequency = document.getElementById('frequency').value;
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+        oscillator.connect(audioContext.destination);
+        oscillator.start();
+        
+        // Stop oscillator when user manually stops the session or page is closed
+        window.addEventListener('beforeunload', function() {
+            oscillator.stop();
+        });
+
+        const video = document.getElementById('radionicsVideo');
+        video.style.display = 'block';
+        video.play();
+    });
+</script>
+    </div>
+  
+  
+  
+</body>
+</html>
