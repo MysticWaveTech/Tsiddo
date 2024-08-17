@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radionics Web App For Abilities</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input[type="text"],
+        input[type="file"],
+        input[type="number"],
+        input[type="range"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .column {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+        }
+        .full-width {
+            flex: 0 0 100%;
+        }
+        .slider {
+            margin: 10px 0;
+        }
+        .premium-look {
+            background-color: #fff;
+            border: 2px solid #e6e6e6;
+            padding: 20px;
+            border-radius: 10px;
+        }
+ 
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        .form-group img {
+            display: block;
+            max-width: 100%;
+            margin-top: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+
+</head>
+<body>
+    <img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/2024-08-07_17-42-17-840.jpg" alt="Radionics Web App For Abilities" /> <br><br>
+<div class="instructions">
+    <h2>Radionics Web App For Abilities Instructions</h2>
+    <p>Welcome to the Radionics Web App. This app allows you to perform radionics sessions with a variety of advanced features. Follow these instructions to get started:</p>
+
+    <h3>Step 1: Target Person's Information</h3>
+    <ul>
+        <li><strong>Target Person's Name</strong>: Enter the full name of the target person in the text field provided.</li>
+        <li><strong>Target Person's Photograph</strong>: Upload a clear photograph of the target person. Click on the "Choose File" button and select the image file from your device.</li>
+    </ul>
+
+    <h3>Step 2: Set Up Radionics Features</h3>
+    <p>Configure the following features to customize your radionics session:</p>
+    <ul>
+        <li><strong>Rate Dial</strong>
+            <ul>
+                <li>Use the slider to adjust the rate dial from 0 to 100. This setting fine-tunes the resonance frequency.</li>
+            </ul>
+        </li>
+        <li><strong>Power Adjustment</strong>
+            <ul>
+                <li>Adjust the power level using the slider. Set the desired power level from 0 to 100.</li>
+            </ul>
+        </li>
+        <li><strong>Amplification</strong>
+            <ul>
+                <li>Use the slider to set the amplification level from 0 to 100. This controls the strength of the signal.</li>
+            </ul>
+        </li>
+        <li><strong>Frequency</strong>
+            <ul>
+                <li>Enter the desired frequency in the text field. This is the specific frequency at which the radionics session will operate.</li>
+            </ul>
+        </li>
+        <li><strong>Intensity</strong>
+            <ul>
+                <li>Adjust the intensity level using the slider from 0 to 100. This controls the intensity of the radionics output.</li>
+            </ul>
+        </li>
+        <li><strong>Trend</strong>
+            <ul>
+                <li>Select a trend from the dropdown menu. Available options are:
+                    <ul>
+                        <li>Teleportation</li>
+                        <li>Telekinesis</li>
+                        <li>Materialisation</li>
+                        <li>Shapeshifting</li>
+                        <li>Invincibility</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Energy Pattern</strong>
+            <ul>
+                <li>Enter the energy pattern in the text field. This defines the specific energy configuration for the session.</li>
+            </ul>
+        </li>
+        <li><strong>Potentizing</strong>
+            <ul>
+                <li>Use the slider to set the potentizing level from 0 to 100. This enhances the energy output.</li>
+            </ul>
+        </li>
+        <li><strong>Frequency Sweep</strong>
+            <ul>
+                <li>Adjust the frequency sweep using the slider from 0 to 100. This setting allows the frequency to vary within a range.</li>
+            </ul>
+        </li>
+        <li><strong>Witness Plate</strong>
+            <ul>
+                <li>Upload an image of the witness plate. Click on the "Choose File" button and select the image file from your device.</li>
+            </ul>
+        </li>
+        <li><strong>Output Plate</strong>
+            <ul>
+                <li>Enter details of the output plate in the text field provided. This is where the energy will be directed.</li>
+            </ul>
+        </li>
+        <li><strong>Scanning</strong>
+            <ul>
+                <li>Adjust the scanning level using the slider from 0 to 100. This controls the depth and range of the scanning process.</li>
+            </ul>
+        </li>
+        <li><strong>Feedback Mechanism</strong>
+            <ul>
+                <li>Enter details of the feedback mechanism in the text field. This system monitors and adjusts the radionics session in real-time.</li>
+            </ul>
+        </li>
+        <li><strong>Modulation</strong>
+            <ul>
+                <li>Use the slider to set the modulation level from 0 to 100. This controls the variation in the radionics signal.</li>
+            </ul>
+        </li>
+        <li><strong>Field Analysis</strong>
+            <ul>
+                <li>Enter details for field analysis in the text field. This allows for detailed examination of the energy fields.</li>
+            </ul>
+        </li>
+        <li><strong>Harmonic Balancing</strong>
+            <ul>
+                <li>Adjust the harmonic balancing using the slider from 0 to 100. This ensures the energies are in harmonic balance.</li>
+            </ul>
+        </li>
+        <li><strong>Multi-wave Oscillator</strong>
+            <ul>
+                <li>Use the slider to set the level for the multi-wave oscillator from 0 to 100. This generates multiple frequencies simultaneously.</li>
+            </ul>
+        </li>
+        <li><strong>Remote Operation</strong>
+            <ul>
+                <li>Enter details for remote operation in the text field. This enables control of the radionics session from a distance.</li>
+            </ul>
+        </li>
+        <li><strong>Energy Field Mapping</strong>
+            <ul>
+                <li>Enter details for energy field mapping in the text field. This provides a visual representation of the energy fields.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Step 3: Start Radionics Session</h3>
+    <ul>
+        <li>After configuring all the features, click the "Start Radionics Session" button to initiate the session.</li>
+    </ul>
+
+    <p>Follow these steps to effectively use the Radionics Web App For Abilities and customize your radionics sessions for optimal results.</p>
+    
+    <br><br>
+    
+    <a href="070824.html" target="_blank" class="btn">Open Radionics Web App For Abilities in New Tab</a>
+
+    <p> Use for 10 minuts 3 times a day.</p>
+</div>
+
+    
+    
+    
+    
+
+</body>
+</html>
