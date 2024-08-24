@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <title>Radionics Web App For Abilities</title>
+    <style>
+        
+        
+        div {
+    box-shadow: inset 40px 50px 30px rgba(0, 0, 0, 0.9),  /* Inner shadow for depth */
+                0 0 5px rgba(0, 0, 0, 0.9); /* Outer shadow for a metallic effect */
+    background: brown;
+}
+
+div label{
+    background-color: lightgrey;
+}
+        
+.knob{
+    box-shadow: none;
+}
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            border: 50px dotted lightgreen;
+            padding: 50px 0 0 0;
+            background-image: url('https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/ai-generated-8460927_1280.jpg');
+            background-size: cover;  /* Ensures the image covers the entire background */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    background-attachment: fixed;  /* Keeps the background image fixed in place */
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #000;
+        }
+        input[type="text"],
+        input[type="file"],
+        input[type="number"],
+        input[type="range"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .column {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+        }
+        .full-width {
+            flex: 0 0 100%;
+        }
+        .slider {
+            margin: 10px 0;
+        }
+        .premium-look {
+            background-color: blue;
+            border: 2px solid #e6e6e6;
+            padding: 20px;
+            border-radius: 10px;
+        }
+ 
+   .premium-look{
+            background-color: blue;
+        }
+ 
+ 
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+    background: linear-gradient(to bottom, white, blue);
+}
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        .form-group img {
+            display: block;
+            max-width: 100%;
+            margin-top: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        
+      
+        
+        
+    </style>
+
+
+</head>
+  
+  
+  
+</head>
+<body>
+     
+     
+    
+      
+    <div class="container premium-look" style="border-top: 50px solid #feb47b; border-bottom: 50px solid #feb47b;"">
+        
+        
+        
+        <h1>Radionics Web App For Abilities</h1>
+        
+        <img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/keyboard-1905888_1280.jpg" style="width: 100%; height: 100px;">
+        
+       <form id="radionicsForm">
+        <div class="form-group">
+            <label for="targetName">Target Person's Name:</label>
+            <input type="text" id="targetName" name="targetName" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="targetPhoto">Target Person's Photograph:</label>
+            <input type="file" id="targetPhoto" name="targetPhoto" accept="image/*" class="form-control">
+            <img id="photoPreview" src="" alt="Target Photograph" style="display: none;">
+        </div>
+
+        <div class="form-group">
+            <label for="witnessPlate">Witness Plate (Upload a representation of the target):</label>
+            <input type="file" id="witnessPlate" name="witnessPlate" accept="image/*" class="form-control">
+            <img id="witnessPreview" src="" alt="Witness Plate" style="display: none;">
+        </div>
+            <div class="row">
+                <div class="column">
+                    <div class="form-group">
+                        <label for="rate-dial">Rate Dial</label>
+                        <input type="range" id="rate-dial" name="rate-dial" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="power-adjustment">Power Adjustment</label>
+                        <input type="range" id="power-adjustment" name="power-adjustment" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="amplification">Amplification</label>
+                        <input type="range" id="amplification" name="amplification" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+            <label for="frequency">Frequency (Hz):</label>
+            <input type="text" id="frequency" name="frequency" class="form-control">
+        </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="intensity">Intensity</label>
+                        <input type="range" id="intensity" name="intensity" min="0" max="100" class="slider">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label for="trend">Trend:</label>
+
+<div class="intent-container">
+                <select id="trend" name="trend">
+                    <option value="teleportation">Teleportation</option>
+                    <option value="telekinesis">Telekinesis</option>
+                    <option value="materialisation">Materialisation</option>
+                    <option value="shapeshifting">Shapeshifting</option>
+                    <option value="invincibility">Invincibility</option>
+                </select>
+            </div>
+                 <br><br><textarea id="intent" rows="4" cols="50" style="color: red; background-color: yellow; border: 50px solid red;">INTENT. TYPE YOUR INTENT HERE..</textarea>
+  <br>
+              <br><br>
+            <div class="form-group full-width">
+                <label for="energy-pattern">Energy Pattern</label>
+                <input type="text" id="energy-pattern" name="energy-pattern" placeholder="Enter energy pattern">
+            </div>
+            <div class="form-group full-width">
+                <label for="potentizing">Potentizing</label>
+                <input type="range" id="potentizing" name="potentizing" min="0" max="100" class="slider">
+            </div>
+            <div class="form-group full-width">
+                <label for="frequency-sweep">Frequency Sweep</label>
+                <input type="range" id="frequency-sweep" name="frequency-sweep" min="0" max="100" class="slider">
+            </div>
+            <div class="row">
+                <div class="column">
+                
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="output-plate">Output Plate</label>
+                        <input type="text" id="output-plate" name="output-plate" placeholder="Enter output plate details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="scanning">Scanning</label>
+                        <input type="range" id="scanning" name="scanning" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="feedback-mechanism">Feedback Mechanism</label>
+                        <input type="text" id="feedback-mechanism" name="feedback-mechanism" placeholder="Enter feedback mechanism details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="modulation">Modulation</label>
+                        <input type="range" id="modulation" name="modulation" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="field-analysis">Field Analysis</label>
+                        <input type="text" id="field-analysis" name="field-analysis" placeholder="Enter field analysis details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="harmonic-balancing">Harmonic Balancing</label>
+                        <input type="range" id="harmonic-balancing" name="harmonic-balancing" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="multi-wave-oscillator">Multi-wave Oscillator</label>
+                        <input type="range" id="multi-wave-oscillator" name="multi-wave-oscillator" min="0" max="100" class="slider">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="remote-operation">Remote Operation</label>
+                        <input type="text" id="remote-operation" name="remote-operation" placeholder="Enter remote operation details">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group">
+                        <label for="energy-field-mapping">Energy Field Mapping</label>
+                        <input type="text" id="energy-field-mapping" name="energy-field-mapping" placeholder="Enter energy field mapping details">
+                    </div>
+                </div>
+            </div>
+         
+e"
+<script>
+    document.getElementById('targetPhoto').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const photoPreview = document.getElementById('photoPreview');
+            photoPreview.src = e.target.result;
+            photoPreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    });
+
+    document.getElementById('witnessPlate').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const witnessPreview = document.getElementById('witnessPreview');
+            witnessPreview.src = e.target.result;
+            witnessPreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    });
+
+    document.getElementById('startSession').addEventListener('click', function() {
+        const frequency = document.getElementById('frequency').value;
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+        oscillator.connect(audioContext.destination);
+        oscillator.start();
+        
+        // Stop oscillator when user manually stops the session or page is closed
+        window.addEventListener('beforeunload', function() {
+            oscillator.stop();
+        });
+
+        const video = document.getElementById('radionicsVideo');
+        video.style.display = 'block';
+        video.play();
+    });
+</script>
+           
+           
+    </div>
+  
+        
+        
+ 
+    <style>
+  
+        h1, h2 {
+            text-align: center;
+        }
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+  
+        }
+        .gadget {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+        }
+        .knob {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background-image: url('https://raw.githubusercontent.com/MysticWaveTech/SubliminalAffirmatiinsRadionics/main/audio-35447_1280%20(1).png'); /* Placeholder for knob graphic */
+            background-size: cover;
+            position: relative;
+            cursor: pointer;
+               border-radius: 50%; /* Makes the knob circular */
+    overflow: hidden; 
+        }
+    </style>
+    <div class="container2" style="background-color: green;">
+        <div class="gadget" style="background-color: yellow; color: red; border: 50px solid red;">
+            <h3>Reality Bender</h3>
+            <p>Alter perceptions of reality.<br><br></br></p>
+            <div class="knob" id="reality-bender-knob"></div>
+             </div>
+        <div class="gadget" style="background-color: yellow; color: red; border: 50px solid red; ">
+            <h3>Quantum Field Manipulator</h3>
+            <p>Influence quantum fields for manifestation.</p>
+            <div class="knob" id="quantum-field-manipulator-knob"></div>
+                  </div>
+            </div>
+           <br><br>
+        <h3> Quantum Computing Integration </h3>
+<label for="quantumComputing">Quantum Computing Intensity:</label>
+<input type="range" id="quantumComputing" min="0" max="100" value="50">
+
+<h3> Holographic Imaging </h3>
+<label style="background-color: lightblue;" for="holographicImagingSize">Holographic Imaging Size:</label>
+<input style="width: 100%; height: 25px;" id="holographicImagingSize" min="0" max="100" value="50">
+   
+ 
+<h3> Morphogenetic Field Interface </h3>
+<label for="morphogeneticField">Morphogenetic Field Strength:</label>
+<input type="number" id="morphogeneticField" min="0" max="100" value="50">
+
+<h3> Biofield Scanner </h3>
+<label for="biofieldScanner">Biofield Scanner Sensitivity:</label>
+<input type="range" id="biofieldScanner" min="0" max="100" value="50">
+
+<h3> Multi-Dimensional Mapping </h3>
+<label for="dimensionalMapping">Dimensional Mapping Range:</label>
+<input type="range" id="dimensionalMapping" min="0" max="100" value="50">
+
+<h3> Neural Link </h3>
+<label for="neuralLinkStrength">Neural Link Strength:</label>
+<input type="text" id="neuralLinkStrength" placeholder="Enter strength (1-10)">
+
+<h3> DNA Resonator </h3>
+<label for="dnaResonatorFrequency">DNA Resonator Frequency:</label>
+<input type="number" id="dnaResonatorFrequency" min="0" max="10000" value="1000">
+
+<h3> Fractal Frequency Generator </h3>
+<label for="fractalFrequency">Fractal Frequency Intensity:</label>
+<input type="range" id="fractalFrequency" min="0" max="100" value="50"><img style="width: 100%; height: 50px;" src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/wallpaper-2128422_1280.png">
+
+<h3> Energetic Signature Tracker </h3>
+<label for="signatureTracker">Energetic Signature Tracking Rate:</label>
+<input type="number" id="signatureTracker" min="1" max="60" value="10">
+
+<h3> Radionic Shield </h3>
+<label for="radionicShieldStrength">Radionic Shield Strength:</label>
+<input type="range" id="radionicShieldStrength" min="0" max="100" value="50">
+<img style="width: 100%; height : 25px;" src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/russian-orthodox-church-8018200_1280.jpg">
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+        
+        
+        
+        
+        
+        
+        
+        
+    <script>
+        // Utility function to calculate the angle
+        function calculateAngle(x, y, cx, cy) {
+            return Math.atan2(y - cy, x - cx) * 180 / Math.PI;
+        }
+
+        function dragKnob(event, knobElement) {
+            let rect = knobElement.getBoundingClientRect();
+            let centerX = rect.left + rect.width / 2;
+            let centerY = rect.top + rect.height / 2;
+
+            let angle = calculateAngle(event.clientX || event.touches[0].clientX, event.clientY || event.touches[0].clientY, centerX, centerY);
+            knobElement.style.transform = `rotate(${angle}deg)`;
+
+            // For demonstration, you can adjust the knob value or trigger other actions here.
+        }
+
+        function initKnob(knobId) {
+            const knobElement = document.getElementById(knobId);
+
+            knobElement.addEventListener('mousedown', function(event) {
+                document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('mouseup', onMouseUp);
+            });
+
+            knobElement.addEventListener('touchstart', function(event) {
+                document.addEventListener('touchmove', onTouchMove);
+                document.addEventListener('touchend', onTouchEnd);
+            });
+
+            function onMouseMove(event) {
+                dragKnob(event, knobElement);
+            }
+
+            function onTouchMove(event) {
+                dragKnob(event, knobElement);
+            }
+
+            function onMouseUp() {
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+            }
+
+            function onTouchEnd() {
+                document.removeEventListener('touchmove', onTouchMove);
+                document.removeEventListener('touchend', onTouchEnd);
+            }
+        }
+
+        function activateGadget(gadgetName) {
+            alert(gadgetName + ' activated!');
+        }
+
+        // Initialize knobs
+        initKnob('reality-bender-knob');
+        initKnob('quantum-field-manipulator-knob');
+        // Repeat initKnob() for other gadgets
+    </script>
+
+        <script>
+        function dragKnob(event, knobElement) {
+    event.preventDefault(); // Prevents screen scrolling
+
+    let rect = knobElement.getBoundingClientRect();
+    let centerX = rect.left + rect.width / 2;
+    let centerY = rect.top + rect.height / 2;
+
+    let angle = calculateAngle(event.clientX || event.touches[0].clientX, event.clientY || event.touches[0].clientY, centerX, centerY);
+    knobElement.style.transform = `rotate(${angle}deg)`;
+
+    // Adjust knob value or trigger other actions here if needed
+}
+
+function initKnob(knobId) {
+    const knobElement = document.getElementById(knobId);
+
+    knobElement.addEventListener('mousedown', function(event) {
+        event.preventDefault(); // Prevents screen scrolling
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    });
+
+    knobElement.addEventListener('touchstart', function(event) {
+        event.preventDefault(); // Prevents screen scrolling
+        document.addEventListener('touchmove', onTouchMove);
+        document.addEventListener('touchend', onTouchEnd);
+    }); 
+
+    function onMouseMove(event) {
+        dragKnob(event, knobElement);
+    }
+
+    function onTouchMove(event) {
+        dragKnob(event, knobElement);
+    }
+
+    function onMouseUp() {
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+    }
+
+    function onTouchEnd() {
+        document.removeEventListener('touchmove', onTouchMove);
+        document.removeEventListener('touchend', onTouchEnd);
+    }
+}
+
+// Initialize knobs
+initKnob('reality-bender-knob');
+initKnob('quantum-field-manipulator-knob');
+// Repeat initKnob() for other gadgets
+        </script>
+           
+           <style>
+
+
+    
+
+.custom-knob-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    touch-action: none;
+}
+
+.custom-knob {
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    box-shadow: none;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+   background-image: url('https://raw.githubusercontent.com/MysticWaveTech/SubliminalAffirmatiinsRadionics/main/audio-35447_1280%20(1).png')
+
+    
+}
+           
+           </style>
+           
+           
+           <div class="custom-knob-container" style="float: left; padding: 25px; background-color: green;">
+    <div class="custom-knob" style="float: left;"></div>
+</div>
+
+<div class="custom-knob-container" style="background-color: green; float: left; padding: 25px;">
+    <div class="custom-knob"></div>
+</div>
+
+<div class="custom-knob-container" style="background-color: green; float: left; padding: 25px;">
+    <div class="custom-knob"></div>
+</div>
+
+<div class="custom-knob-container" style="background-color: green; float: left; padding: 25px; background-color: brown;">
+    <div class="custom-knob"></div>
+</div>
+
+<br style="clear: both;">
+     
+           
+           
+           
+           <script>
+               
+               function dragKnob(event, knobElement) {
+    event.preventDefault(); // Prevents screen scrolling
+
+    let rect = knobElement.getBoundingClientRect();
+    let centerX = rect.left + rect.width / 2;
+    let centerY = rect.top + rect.height / 2;
+
+    let angle = calculateAngle(event.clientX || event.touches[0].clientX, event.clientY || event.touches[0].clientY, centerX, centerY);
+    knobElement.style.transform = `rotate(${angle}deg)`;
+
+    // Adjust knob value or trigger other actions here if needed
+}
+
+function calculateAngle(clientX, clientY, centerX, centerY) {
+    let deltaX = clientX - centerX;
+    let deltaY = clientY - centerY;
+    let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+    return angle + 90; // Adjusting for starting angle
+}
+
+function initKnobs() {
+    const knobs = document.querySelectorAll('.custom-knob');
+
+    knobs.forEach(knobElement => {
+        knobElement.addEventListener('mousedown', function(event) {
+            event.preventDefault();
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        });
+
+        knobElement.addEventListener('touchstart', function(event) {
+            event.preventDefault();
+            document.addEventListener('touchmove', onTouchMove);
+            document.addEventListener('touchend', onTouchEnd);
+        });
+
+        function onMouseMove(event) {
+            dragKnob(event, knobElement);
+        }
+
+        function onTouchMove(event) {
+            dragKnob(event, knobElement);
+        }
+
+        function onMouseUp() {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+
+        function onTouchEnd() {
+            document.removeEventListener('touchmove', onTouchMove);
+            document.removeEventListener('touchend', onTouchEnd);
+        }
+    });
+}
+
+// Initialize all knobs
+document.addEventListener('DOMContentLoaded', initKnobs);
+           </script>
+           
+         <h3> Modulation </h3>
+<label for="modulation">Modulation (Range 0-100):</label>
+<input type="range" id="modulation" min="0" max="100" value="50">
+<img style="width: 100%; height: 50px;" src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/wallpaper-2067806_1280.png">
+<h3> Scalar Wave Generator </h3>
+<label for="scalarWaveColor">Scalar Wave Color:</label>
+<input type="color" id="scalarWaveColor" value="#ff0000">
+
+<h3> Multi-Witness Integration </h3>
+<label for="multiWitness">Multi-Witness Integration:</label>
+<input type="number" id="multiWitness" min="1" max="10" value="1">
+
+<h3> Intention Booster </h3><div style="background-color: pink;">
+<label class="intentionboostertitle">Intention Booster Strength:</label>
+<input type="radio" id="lowBoost" name="intentionBoost" value="low">
+<label class="intentionbooster" for="lowBoost">Low</label>
+<input class="intentionbooster" type="radio" id="mediumBoost" name="intentionBoost" value="medium" checked>
+<label class="intentionbooster" for="mediumBoost">Medium</label>
+<input class="intentionbooster" type="radio" id="highBoost" name="intentionBoost" value="high">
+<label class="intentionbooster" for="highBoost">High</label>
+</div>
+<h3> Automatic Tuning </h3>
+<label for="autoTuning">Automatic Tuning:</label>
+<input type="checkbox" id="autoTuning">
+
+<h3> Quantum Entanglement Simulator </h3>
+<label for="quantumEntanglement">Quantum Entanglement Intensity (Range 0-100):</label>
+<input type="range" id="quantumEntanglement" min="0" max="100" value="50"><img style="width: 100%; height: 20px;" src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/wallpaper-2067799_1280.jpg">
+
+<h3> Power Amplifier </h3>
+<label for="powerAmplifier">Power Amplifier:</label>
+<input type="text" id="powerAmplifier" placeholder="Enter power level">
+<div id="lawglow" class="custom-knob-container" style="background-color: grey; float: left; padding: 25px;">
+    <div class="custom-knob" style="float: left;"></div>
+</div>
+
+<div id="lawglow" class="custom-knob-container" style="background-color: red; float: left; padding: 25px;">
+    <div class="custom-knob"></div>
+</div>
+
+<div id="lawglow" class="custom-knob-container" style="background-color: red; float: left; padding: 25px;">
+    <div class="custom-knob"></div>
+</div>
+
+<div id="lawglow" class="custom-knob-container" style="float: left; padding: 25px; background-color: blue;">
+    <div class="custom-knob"></div>
+</div>
+
+<br style="clear: both;">
+
+<style>
+    
+
+
+
+.white label {
+    color: #fff; /* Text color */
+    background-color: red;
+    text-shadow: 0 0 10px #000, /* Horizontal and vertical offset with blue color */
+                 0 0 20px #00p,
+                 0 0 30px #000,
+                 0 0 40px #00f,
+                 0 0 50px #00f,
+                 0 0 60px #00f,
+                 0 0 70px #00f;
+}
+
+
+.white{text-align: center; background-color: red; border: 5px dotted lightgreen;}
+
+#lawglow {
+    width: 200px;
+    height: 200px;
+    background-color: #333; /* Background color of the element */
+    box-shadow: 0 0 20px red, /* Horizontal and vertical offset with green color */
+                0 0 30px red,
+                0 0 40px red,
+                0 0 50px red;
+                width: 100px;
+                height: 100px;
+                margins: 40px;
+}
+
+.glow-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #111;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+}
+
+    
+    .glow-box {
+    width: 200px;
+    height: 200px;
+    background-color: #333; /* Background color of the element */
+    box-shadow: 0 0 20px #0f0, /* Horizontal and vertical offset with green color */
+                0 0 30px #0f0,
+                0 0 40px #0f0,
+                0 0 50px #0f0;
+}
+    
+    
+</style>
+<h3> Energy Reservoir </h3>
+<label for="energyReservoir">Energy Reservoir (Range 0-100):</label>
+<input type="range" id="energyReservoir" min="0" max="100" value="50">
+
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+           
+           <h3> Chakra Balancer </h3>
+<label for="chakraBalance">Chakra Balancer:</label>
+<input type="range" id="chakraBalance" min="0" max="100" value="50">
+
+<h3> Aura Cleanser </h3>
+<label for="auraCleanserColor">Aura Cleanser Color:</label>
+<input type="color" id="auraCleanserColor" value="#00ff00"><br style="clear: both;"><br>
+           <div style="border: 50px solid teal;">
+<h3> Manifestation Optimizer </h3>
+<label>Manifestation Optimizer Level:</label>
+<input type="radio" id="lowManifestation" name="manifestationOptimizer" value="low">
+<label for="lowManifestation">Low</label>
+<input type="radio" id="mediumManifestation" name="manifestationOptimizer" value="medium" checked>
+<label for="mediumManifestation">Medium</label>
+<input type="radio" id="highManifestation" name="manifestationOptimizer" value="high">
+<label for="highManifestation">High</label>
+</div><br>
+<h3> Biofeedback Interface removed </h3>
+<div style="background-color: lightblue;">
+
+<h3> Dimensional Tuner </h3>
+<label for="dimensionalShift">Dimensional Shift:</label>
+<input type="range" id="dimensionalShift" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/wallpaper-2067806_1280.png" style="border-bottom: 50px solid red; width: 100%; height: 25px;">
+
+<h3> Cosmic Ray Receiver </h3>
+<label for="cosmicRay">Cosmic Ray Intensity:</label>
+<input type="range" id="cosmicRay" min="0" max="100" value="50">
+
+<h3> Astral Projector </h3>
+<label for="astralProjection">Astral Projection Level:</label>
+<input type="text" id="astralProjection" placeholder="Enter level (1-10)">
+
+<h3> Time Manipulation Tool </h3><div style="background-color: purple;">
+<label for="timeManipulation">Time Manipulation Intensity:</label>
+<input type="range" id="timeManipulation" min="0" max="100" value="50"></div>
+
+<h3> Water Imprinter </h3>
+<label for="waterImprinter">Water Imprinter Frequency (0-100):</label>
+<input type="range" id="waterImprinter" min="0" max="100" value="50">
+<div style="background-color: pink;">
+<h3> Crystal Harmonizer </h3>
+<label for="crystalHarmonizer">Crystal Harmonizer Strength:</label>
+<input type="number" id="crystalHarmonizer" min="0" max="100" value="50"></div>
+
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+        
+           
+         <!--
+           <h3> Quantum Computing Quark Simulator</h3>
+<label for="quantumComputing">Quantum Computing Integration:</label>
+<input type="text" id="quantumComputing" placeholder="Enter integration level (1-10)">
+
+<h3> Holographic City </h3>
+<label for="holographicImagingSize">Holographic Imaging Size:</label>
+<input type="range" id="holographicImagingSize" min="1" max="100" value="50">
+<label for="holographicImagingColor">Color:</label>
+<input type="color" id="holographicImagingColor" value="#ff00ff">
+
+<h3> Morphogenetic Field Creation </h3><div style="background-color: lightgreen;">
+<label for="morphogeneticField">Morphogenetic Field Strength:</label>
+<input type="range" id="morphogeneticField" min="0" max="100" value="50">
+<label for="morphogeneticFieldMode">Mode:</label>
+<select id="morphogeneticFieldMode">
+    <option value="healing">Healing</option>
+    <option value="manifestation">Manifestation</option>
+    <option value="both">Both</option>
+</select>
+</div>
+
+
+    
+<div style="background-color: orange;">
+
+<h3> Biofield History </h3>
+<label for="biofieldScannerSensitivity">Biofield Scanner Sensitivity:</label>
+<input type="number" id="biofieldScannerSensitivity" min="1" max="100" value="50">
+<label for="biofieldScannerUnits">Units:</label>
+<input type="text" id="biofieldScannerUnits" placeholder="e.g., microtesla">
+
+<h3> Multi-Dimensional Gateways </h3>
+<label for="dimensionalMappingRange">Dimensional Mapping Range:</label>
+<input type="range" id="dimensionalMappingRange" min="1" max="100" value="50">
+<label for="dimensionalMappingColor">Color:</label>
+<input type="color" id="dimensionalMappingColor" value="#00ff00">
+
+<h3> Neurons </h3>
+<label for="neuralLinkFrequency">Neural Link Frequency:</label>
+<input type="number" id="neuralLinkFrequency" min="0" max="10000" value="1000">
+<label for="neuralLinkControl">Control Mode:</label>
+<input type="radio" id="manualControl" name="neuralLinkControl" value="manual" checked>
+<label for="manualControl">Manual</label>
+<input type="radio" id="automaticControl" name="neuralLinkControl" value="automatic">
+<label for="automaticControl">Automatic</label>
+
+<h3> DNA Resonator </h3>
+<label for="dnaResonatorFrequency">DNA Resonator Frequency:</label>
+<input type="range" id="dnaResonatorFrequency" min="0" max="10000" value="5000">
+<label for="dnaResonatorTarget">Target DNA Sequence:</label>
+<input type="text" id="dnaResonatorTarget" placeholder="Enter sequence">
+
+<h3> Fractal Frequency Beam </h3>
+<label for="fractalFrequency">Fractal Frequency Intensity:</label>
+<input type="range" id="fractalFrequency" min="0" max="100" value="50">
+<label for="fractalFrequencyType">Frequency Type:</label>
+<select id="fractalFrequencyType">
+    <option value="simple">Simple</option>
+    <option value="complex">Complex</option>
+</select>
+
+<h3> Energetic Signature Tracker </h3>
+<label for="signatureTrackerRate">Energetic Signature Tracking Rate:</label>
+<input type="number" id="signatureTrackerRate" min="1" max="60" value="10">
+<label for="signatureTrackerUnits">Units:</label>
+<input type="text" id="signatureTrackerUnits" placeholder="e.g., seconds">
+
+<h3> Radionic Shield </h3>
+<label for="radionicShieldStrength">Radionic Shield Strength:</label>
+<input type="range" id="radionicShieldStrength" min="0" max="100" value="50">
+<label for="radionicShieldColor">Color:</label>
+<input type="color" id="radionicShieldColor" value="#0000ff">
+-->
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input, select').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+
+<style>
+    
+    .white label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #Fff;
+        }
+    
+</style>
+
+<div class="white" style="background-image: url('https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/dirt-road-3990656_1280.jpg');">
+           <h3> Pain Reliever </h3>
+<label for="painRelieverIntensity">Pain Reliever Intensity:</label>
+<input type="range" id="painRelieverIntensity" min="0" max="100" value="50">
+<label for="painRelieverTarget">Target Area:</label>
+<input type="text" id="painRelieverTarget" placeholder="e.g., lower back">
+
+<h3> Immune System Booster </h3>
+<label for="immuneSystemBoostLevel">Immune System Boost Level:</label>
+<input type="number" id="immuneSystemBoostLevel" min="1" max="100" value="50">
+<label for="immuneSystemBoostFrequency">Frequency:</label>
+<input type="range" id="immuneSystemBoostFrequency" min="0" max="10000" value="5000">
+
+<h3> Sleep Enhancer </h3>
+<label for="sleepEnhancerDuration">Sleep Enhancer Duration:</label>
+<input type="number" id="sleepEnhancerDuration" min="1" max="12" value="8">
+<label for="sleepEnhancerFrequency">Frequency:</label>
+<input type="range" id="sleepEnhancerFrequency" min="1" max="100" value="50">
+
+<h3> Stress Reducer </h3>
+<label for="stressReducerLevel">Stress Reducer Level:</label>
+<input type="range" id="stressReducerLevel" min="0" max="100" value="50">
+<label for="stressReducerMode">Mode:</label>
+<select id="stressReducerMode">
+    <option value="calm">Calm</option>
+    <option value="relax">Relax</option>
+    <option value="both">Both</option>
+</select>
+
+<h3> Detoxifier </h3>
+<label for="detoxifierStrength">Detoxifier Strength:</label>
+<input type="number" id="detoxifierStrength" min="1" max="100" value="50">
+<label for="detoxifierType">Type:</label>
+<input type="text" id="detoxifierType" placeholder="e.g., liver, kidneys">
+
+<h3> Cellular Regenerator </h3>
+<label for="cellularRegeneratorFrequency">Cellular Regenerator Frequency:</label>
+<input type="range" id="cellularRegeneratorFrequency" min="0" max="10000" value="5000"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/wallpaper-2065236_1280.png" style="width: 100%; height: 25px;">
+<label for="cellularRegeneratorTarget">Target Area:</label>
+<input type="text" id="cellularRegeneratorTarget" placeholder="e.g., skin cells"></div>
+
+<h3> Hormonal Balancer </h3>
+<label for="hormonalBalancerLevel">Hormonal Balancer Level:</label>
+<input type="range" id="hormonalBalancerLevel" min="0" max="100" value="50">
+<label for="hormonalBalancerType">Type:</label>
+<select id="hormonalBalancerType">
+    <option value="estrogen">Estrogen</option>
+    <option value="testosterone">Testosterone</option>
+    <option value="both">Both</option>
+</select>
+
+<h3> Anti-Aging Tool </h3>
+<label for="antiAgingToolFrequency">Anti-Aging Frequency:</label>
+<input type="range" id="antiAgingToolFrequency" min="0" max="10000" value="5000">
+<label for="antiAgingToolIntensity">Intensity:</label>
+<input type="number" id="antiAgingToolIntensity" min="0" max="100" value="50">
+</div>
+<h3> Mood Stabilizer </h3>
+<label for="moodStabilizerLevel">Mood Stabilizer Level:</label>
+<input type="range" id="moodStabilizerLevel" min="0" max="100" value="50">
+<label for="moodStabilizerMode">Mode:</label>
+<select id="moodStabilizerMode">
+    <option value="calm">Calm</option>
+    <option value="uplift">Uplift</option>
+    <option value="balance">Balance</option>
+</select>
+<div id="textenhance">
+<h3> Vitality Enhancer </h3>
+<label for="vitalityEnhancerLevel">Vitality Enhancer Level:</label>
+<input type="range" id="vitalityEnhancerLevel" min="0" max="100" value="50">
+<label for="vitalityEnhancerFrequency">Frequency:</label>
+<input type="range" id="vitalityEnhancerFrequency" min="1" max="10000" value="5000">
+
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input, select').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+           
+           <h3> Prosperity Generator </h3>
+<label for="prosperityGeneratorIntensity">Prosperity Generator Intensity:</label>
+<input type="range" id="prosperityGeneratorIntensity" min="0" max="100" value="50">
+<label for="prosperityGeneratorFocus">Focus Area:</label>
+<input type="text" id="prosperityGeneratorFocus" placeholder="e.g., wealth, abundance">
+
+<h3> Love Magnet </h3>
+<label for="loveMagnetStrength">Love Magnet Strength:</label>
+<input type="number" id="loveMagnetStrength" min="1" max="100" value="50">
+<label for="loveMagnetType">Type of Love:</label>
+<select id="loveMagnetType">
+    <option value="romantic">Romantic</option>
+    <option value="friendship">Friendship</option>
+    <option value="both">Both</option>
+</select>
+
+<h3> Career Success Tool </h3>
+<label for="careerSuccessLevel">Career Success Level:</label>
+<input type="range" id="careerSuccessLevel" min="0" max="100" value="50">
+<label for="careerSuccessFocus">Focus Area:</label>
+<input type="text" id="careerSuccessFocus" placeholder="e.g., promotion, job opportunities">
+
+<h3> Weight Loss Assistant </h3>
+<label for="weightLossIntensity">Weight Loss Intensity:</label>
+<input type="range" id="weightLossIntensity" min="0" max="100" value="50">
+<label for="weightLossGoal">Goal:</label>
+<input type="text" id="weightLossGoal" placeholder="e.g., 5 kg, 10 kg">
+
+<h3> Memory Enhancer </h3>
+<label for="memoryEnhancerLevel">Memory Enhancer Level:</label>
+<input type="range" id="memoryEnhancerLevel" min="0" max="100" value="50">
+<label for="memoryEnhancerType">Type of Memory:</label>
+<select id="memoryEnhancerType">
+    <option value="shortTerm">Short-Term</option>
+    <option value="longTerm">Long-Term</option>
+    <option value="both">Both</option>
+</select>
+
+<h3> Creativity Booster </h3>
+<label for="creativityBoosterIntensity">Creativity Booster Intensity:</label>
+<input type="number" id="creativityBoosterIntensity" min="1" max="100" value="50">
+<label for="creativityBoosterFocus">Focus Area:</label>
+<input type="text" id="creativityBoosterFocus" placeholder="e.g., artistic, problem-solving">
+
+<h3> Spiritual Awakening Tool </h3>
+<label for="spiritualAwakeningLevel">Spiritual Awakening Level:</label>
+<input type="range" id="spiritualAwakeningLevel" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/ai-generated-8949854_1280.png" style="width: 100%; height: 25px;">
+<label for="spiritualAwakeningType">Type:</label>
+<select id="spiritualAwakeningType">
+    <option value="general">General</option>
+    <option value="specific">Specific</option>
+</select>
+
+<h3> Intuition Enhancer </h3>
+<label for="intuitionEnhancerStrength">Intuition Enhancer Strength:</label>
+<input type="range" id="intuitionEnhancerStrength" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/wallpaper-2065241_1280.png" style="width: 100%; height: 25px;">
+<label for="intuitionEnhancerType">Type of Intuition:</label>
+<select id="intuitionEnhancerType">
+    <option value="empathic">Empathic</option>
+    <option value="psychic">Psychic</option>
+    <option value="both">Both</option>
+</select>
+
+<h3> Goal Realizer </h3>
+<label for="goalRealizerLevel">Goal Realizer Level:</label>
+<input type="range" id="goalRealizerLevel" min="0" max="100" value="50">
+<label for="goalRealizerFocus">Focus Area:</label>
+<input type="text" id="goalRealizerFocus" placeholder="e.g., personal, professional">
+
+<h3> Personal Power Amplifier </h3>
+<label for="personalPowerAmplifierLevel">Personal Power Amplifier Level:</label>
+<input type="range" id="personalPowerAmplifierLevel" min="0" max="100" value="50">
+<label for="personalPowerAmplifierFocus">Focus Area:</label>
+<input type="text" id="personalPowerAmplifierFocus" placeholder="e.g., confidence, charisma">
+
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input, select').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+           
+           <h3> Space Clearing Tool </h3>
+<label for="spaceClearingIntensity">Space Clearing Intensity:</label>
+<input type="range" id="spaceClearingIntensity" min="0" max="100" value="50">
+<label for="spaceClearingArea">Area to Clear:</label>
+<input type="text" id="spaceClearingArea" placeholder="e.g., room, entire house">
+
+<h3> Plant Growth Enhancer </h3>
+<label for="plantGrowthLevel">Plant Growth Level:</label>
+<input type="number" id="plantGrowthLevel" min="1" max="100" value="50">
+<label for="plantGrowthType">Type of Plant:</label>
+<select id="plantGrowthType">
+    <option value="vegetable">Vegetable</option>
+    <option value="flower">Flower</option>
+    <option value="herb">Herb</option>
+</select>
+
+<h3> Animal Healing Tool </h3>
+<label for="animalHealingStrength">Animal Healing Strength:</label>
+<input type="range" id="animalHealingStrength" min="0" max="100" value="50">
+<label for="animalHealingType">Type of Animal:</label>
+<select id="animalHealingType">
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="other">Other</option>
+</select>
+
+<h3> Weather Modifier </h3>
+<label for="weatherModifierType">Weather Modifier Type:</label>
+<select id="weatherModifierType">
+    <option value="rain">Rain</option>
+    <option value="sun">Sun</option>
+    <option value="wind">Wind</option>
+    <option value="temperature">Temperature</option>
+</select>
+<label for="weatherModifierIntensity">Intensity:</label>
+<input type="range" id="weatherModifierIntensity" min="0" max="100" value="50">
+
+<h3> Geopathic Stress Neutralizer </h3>
+<label for="geopathicStressLevel">Geopathic Stress Level:</label>
+<input type="number" id="geopathicStressLevel" min="1" max="100" value="50">
+<label for="geopathicStressArea">Area to Neutralize:</label>
+<input type="text" id="geopathicStressArea" placeholder="e.g., specific location, entire property">
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+
+
+
+
+<h3> EMF Shield </h3>
+<label for="emfShieldStrength">EMF Shield Strength:</label>
+<input type="range" id="emfShieldStrength" min="0" max="100" value="50"><img style="width: 100%; height : 25px;" src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/russian-orthodox-church-8018200_1280.jpg" style="width: 100%; height: 50px;">
+<label for="emfShieldRange">Range:</label>
+<input type="text" id="emfShieldRange" placeholder="e.g., room, entire house">
+<div style="background-color: lightblue; color: brown; border: 15px dotted white;">
+<h3> Energy Vortex Creator </h3>
+<label for="energyVortexSize">Energy Vortex Size:</label>
+<input type="number" id="energyVortexSize" min="1" max="100" value="50">
+<label for="energyVortexLocation">Location:</label>
+<input type="text" id="energyVortexLocation" placeholder="e.g., living room, garden">
+
+<h3> Home Protection Field </h3>
+<label for="homeProtectionFieldStrength">Home Protection Field Strength:</label>
+<input type="range" id="homeProtectionFieldStrength" min="0" max="100" value="50">
+<label for="homeProtectionFieldRadius">Radius:</label>
+<input type="text" id="homeProtectionFieldRadius" placeholder="e.g., specific area, entire property">
+
+<h3> Environmental Detoxifier </h3>
+<label for="environmentalDetoxifierLevel">Environmental Detoxifier Level:</label>
+<input type="range" id="environmentalDetoxifierLevel" min="0" max="100" value="50">
+<label for="environmentalDetoxifierArea">Area to Detoxify:</label>
+<input type="text" id="environmentalDetoxifierArea" placeholder="e.g., room, outdoor space">
+
+<h3> Feng Shui Enhancer </h3>
+<label for="fengShuiEnhancerLevel">Feng Shui Enhancer Level:</label>
+<input type="number" id="fengShuiEnhancerLevel" min="1" max="100" value="50">
+<label for="fengShuiEnhancerArea">Area to Enhance:</label>
+<input type="text" id="fengShuiEnhancerArea" placeholder="e.g., living room, entire home">
+
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input, select').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+           
+           <h3> Karma Balancer </h3>
+<label for="karmaBalancerLevel">Karma Balancer Level:</label>
+<input type="range" id="karmaBalancerLevel" min="0" max="100" value="50">
+<label for="karmaBalancerArea">Area of Focus:</label>
+<input type="text" id="karmaBalancerArea" placeholder="e.g., personal life, work">
+
+<h3> Spirit Communication Device </h3>
+<label for="spiritCommunicationFrequency">Communication Frequency:</label>
+<input type="number" id="spiritCommunicationFrequency" min="1" max="1000" value="500">
+<label for="spiritCommunicationChannel">Communication Channel:</label>
+<select id="spiritCommunicationChannel">
+    <option value="meditation">Meditation</option>
+    <option value="dream">Dream</option>
+    <option value="trance">Trance</option>
+</select>
+
+<h3> Akashic Records Accessor </h3>
+<label for="akashicRecordsAccess">Access Level:</label>
+<input type="range" id="akashicRecordsAccess" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/circuit-5315089_1280.jpg" style="width: 100%; height: 50px;">
+<label for="akashicRecordsFocus">Focus Area:</label>
+<input type="text" id="akashicRecordsFocus" placeholder="e.g., specific query, general access">
+
+<h3> Soul Retrieval Tool </h3>
+<label for="soulRetrievalDepth">Soul Retrieval Depth:</label>
+<input type="number" id="soulRetrievalDepth" min="1" max="100" value="50">
+<label for="soulRetrievalType">Type of Retrieval:</label>
+<select id="soulRetrievalType">
+    <option value="fragment">Fragment</option>
+    <option value="aspect">Aspect</option>
+    <option value="memory">Memory</option>
+</select></div>
+
+<h3> Ancestral Healing Device </h3>
+<label for="ancestralHealingLevel">Ancestral Healing Level:</label>
+<input type="range" id="ancestralHealingLevel" min="0" max="100" value="50">
+<label for="ancestralHealingLineage">Lineage to Focus On:</label>
+<input type="text" id="ancestralHealingLineage" placeholder="e.g., paternal, maternal">
+
+<h3> Higher Self Connector </h3>
+<label for="higherSelfConnectionStrength">Connection Strength:</label>
+<input type="range" id="higherSelfConnectionStrength" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/circuit-board-6560489_1280.jpg" style="width: 100%; height: 25px;">
+<label for="higherSelfConnectionType">Connection Type:</label>
+<select id="higherSelfConnectionType">
+    <option value="meditation">Meditation</option>
+    <option value="visualization">Visualization</option>
+    <option value="dialogue">Dialogue</option>
+</select>
+
+<h3> Past Life Regression Tool </h3>
+<label for="pastLifeRegressionDepth">Regression Depth:</label>
+<input type="number" id="pastLifeRegressionDepth" min="1" max="100" value="50">
+<label for="pastLifeRegressionFocus">Focus Area:</label>
+<input type="text" id="pastLifeRegressionFocus" placeholder="e.g., specific past life, general exploration">
+
+<h3> Aura Viewer </h3>
+<label for="auraViewerSensitivity">Sensitivity Level:</label>
+<input type="range" id="auraViewerSensitivity" min="0" max="100" value="50">
+<label for="auraViewerMode">Viewing Mode:</label>
+<select id="auraViewerMode">
+    <option value="color">Color</option>
+    <option value="intensity">Intensity</option>
+    <option value="shape">Shape</option>
+</select>
+
+<h3> Prayer Amplifier </h3>
+<label for="prayerAmplifierPower">Amplification Power:</label>
+<input type="range" id="prayerAmplifierPower" min="0" max="100" value="50">
+<label for="prayerAmplifierFocus">Focus of Prayer:</label>
+<input type="text" id="prayerAmplifierFocus" placeholder="e.g., healing, guidance">
+
+<h3> Divine Guidance Receiver </h3>
+<label for="divineGuidanceReception">Reception Level:</label>
+<input type="range" id="divineGuidanceReception" min="0" max="100" value="50">
+<label for="divineGuidanceSource">Source of Guidance:</label>
+<select id="divineGuidanceSource">
+    <option value="angels">Angels</option>
+    <option value="spirit guides">Spirit Guides</option>
+    <option value="higher self">Higher Self</option>
+</select>
+
+
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input, select').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+           
+           <h3> Confidence Builder </h3>
+<label for="confidenceLevel">Confidence Level:</label>
+<input type="range" id="confidenceLevel" min="0" max="100" value="50">
+<label for="confidenceFocus">Focus Area:</label>
+<input type="text" id="confidenceFocus" placeholder="e.g., social situations, work">
+
+<h3> Public Speaking Enhancer </h3>
+<label for="publicSpeakingSkill">Skill Level:</label>
+<input type="range" id="publicSpeakingSkill" min="0" max="100" value="50">
+<label for="publicSpeakingAnxiety">Anxiety Reduction:</label>
+<input type="number" id="publicSpeakingAnxiety" min="0" max="100" value="50">
+
+<h3> Learning Accelerator </h3>
+<label for="learningRetention">Retention Level:</label>
+<input type="range" id="learningRetention" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/printed-circuit-board-6979572_1280.jpg" style="width: 100%; height: 25px;">
+<label for="learningFocus">Learning Focus:</label>
+<input type="text" id="learningFocus" placeholder="e.g., specific subjects, general learning">
+
+<br><br><div style="background-color: #666;">
+<div style="width: 50%; float: left;">
+<img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/devils-8785236_1280.webp" style="width: 100%;">
+
+<textarea style="width: 50%; height: 300px; color: pink; background-color: #000000;">Invoke what you will</textarea>
+</div>
+<div style="background-color: yellow; color: red; border: 25px dotted orange; float: right; width: 120px;">
+    
+    <div class="custom-knob-container" style="padding: 25px; background-color: black;">
+    <div class="custom-knob" style="float: left;"></div>
+</div>
+
+<div class="custom-knob-container" style="background-color: black; padding: 25px;">
+    <div class="custom-knob"></div>
+</div>
+
+<div class="custom-knob-container" style="background-color: black; padding: 25px;">
+    <div class="custom-knob"></div>
+</div>
+
+<div class="custom-knob-container" style="background-color: green; padding: 25px; background-color: black;">
+    <div class="custom-knob"></div>
+</div>
+</div>
+<br style="clear: both;">
+</div>
+<br style="clear: both;">
+
+<h3> Decision-Making Assistant </h3>
+<label for="decisionMakingClarity">Decision Clarity:</label>
+<input type="range" id="decisionMakingClarity" min="0" max="100" value="50">
+<label for="decisionMakingCriteria">Criteria:</label>
+<input type="text" id="decisionMakingCriteria" placeholder="e.g., personal values, goals">
+
+<h3> Focus Enhancer </h3>
+<label for="focusLevel">Focus Level:</label>
+<input type="range" id="focusLevel" min="0" max="100" value="50">
+<label for="focusType">Type of Focus:</label>
+<select id="focusType">
+    <option value="short-term">Short-term</option>
+    <option value="long-term">Long-term</option>
+    <option value="multi-tasking">Multi-tasking</option>
+</select>
+
+<h3> Habit Breaker </h3>
+<label for="habitType">Habit Type:</label>
+<input type="text" id="habitType" placeholder="e.g., smoking, procrastination">
+<label for="habitIntensity">Habit Intensity:</label>
+<input type="range" id="habitIntensity" min="0" max="100" value="50">
+
+<h3> Motivation Booster </h3>
+<label for="motivationLevel">Motivation Level:</label>
+<input type="range" id="motivationLevel" min="0" max="100" value="50">
+<label for="motivationGoal">Motivation Goal:</label>
+<input type="text" id="motivationGoal" placeholder="e.g., personal achievement, project completion">
+
+<h3> Relationship Harmonizer </h3>
+<label for="relationshipHarmony">Harmony Level:</label>
+<input type="range" id="relationshipHarmony" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/circuit-board-564811_1280.jpg" style="width: 100%; height: 50px;"">
+<label for="relationshipFocus">Focus Area:</label>
+<input type="text" id="relationshipFocus" placeholder="e.g., communication, empathy">
+</div>
+
+<style>
+    
+    #textenhance label{
+        background-color: blue;
+        color: pink;
+        
+    }
+    
+    #textenhance{
+        border: 50px dotted lightgreen;
+    }
+    
+    
+</style>
+
+
+<h3> Fear Neutralizer </h3>
+<label for="fearType">Fear Type:</label>
+<input type="text" id="fearType" placeholder="e.g., heights, public speaking">
+<label for="fearIntensity">Fear Intensity:</label>
+<input type="range" id="fearIntensity" min="0" max="100" value="50">
+
+<h3> Patience Developer </h3>
+<label for="patienceLevel">Patience Level:</label>
+<input type="range" id="patienceLevel" min="0" max="100" value="50">
+<label for="patienceFocus">Focus Area:</label>
+<input type="text" id="patienceFocus" placeholder="e.g., stressful situations, daily interactions">
+
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input, select').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+           
+           <h3> Psi Wheel Enhancer </h3>
+<label for="psiWheelPerformance">Psi Wheel Performance:</label>
+<input type="range" id="psiWheelPerformance" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/wallpaper-2065225_1280.png" style="width: 100%; height: 25px;">
+     
+<label for="psiWheelFocus">Focus Area:</label>
+<input type="text" id="psiWheelFocus" placeholder="e.g., speed, precision">
+
+<h3> Remote Influencing Tool </h3>
+<label for="remoteInfluenceStrength">Influence Strength:</label>
+<input type="range" id="remoteInfluenceStrength" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/graphic-card-4794586_1280.png" style="width: 100%; height: 25px;">
+     
+<label for="remoteTarget">Target:</label>
+<input type="text" id="remoteTarget" placeholder="e.g., specific person, general area">
+
+<h3> Synchronicity Generator </h3>
+<label for="synchronicityLevel">Synchronicity Level:</label>
+<input type="range" id="synchronicityLevel" min="0" max="100" value="50">
+<label for="synchronicityFocus">Focus Area:</label>
+<input type="text" id="synchronicityFocus" placeholder="e.g., events, interactions">
+
+<h3> Reality Shifter </h3>
+<label for="realityShiftIntensity">Reality Shift Intensity:</label>
+<input type="range" id="realityShiftIntensity" min="0" max="100" value="50">
+<label for="realityShiftFocus">Focus Area:</label>
+<input type="text" id="realityShiftFocus" placeholder="e.g., alternate timelines, dimensional changes">
+
+<h3> Subconscious Reprogrammer </h3>
+<label for="subconsciousReprogramming">Reprogramming Intensity:</label>
+<input type="range" id="subconsciousReprogramming" min="0" max="100" value="50">
+<label for="subconsciousFocus">Focus Area:</label>
+<input type="text" id="subconsciousFocus" placeholder="e.g., limiting beliefs, self-esteem">
+<div style="background-color: yellow; color: red; border: 25px solid red;">
+<h3> Luck Enhancer </h3>
+<label for="luckEnhancementLevel">Luck Enhancement Level:</label>
+<input type="range" id="luckEnhancementLevel" min="0" max="100" value="50">
+<label for="luckFocus">Focus Area:</label>
+<input type="text" id="luckFocus" placeholder="e.g., opportunities, favorable outcomes">
+
+<h3> Time Travel Simulator </h3>
+<label for="timeTravelSimulation">Simulation Intensity:</label>
+<input type="range" id="timeTravelSimulation" min="0" max="100" value="50">
+<label for="timeTravelFocus">Focus Area:</label>
+<input type="text" id="timeTravelFocus" placeholder="e.g., past, future scenarios">
+
+<h3> Dimensional Anchor </h3>
+<label for="dimensionalAnchorStrength">Anchor Strength:</label>
+<input type="range" id="dimensionalAnchorStrength" min="0" max="100" value="50">
+<label for="dimensionalFocus">Focus Area:</label>
+<input type="text" id="dimensionalFocus" placeholder="e.g., specific dimensions, planes">
+
+<h3> Psi Enhancer </h3>
+<label for="psiEnhancementLevel">Psi Enhancement Level:</label>
+<input type="range" id="psiEnhancementLevel" min="0" max="100" value="50">
+<label for="psiType">Type of Psi Ability:</label>
+<select id="psiType">
+    <option value="telepathy">Telepathy</option>
+    <option value="clairvoyance">Clairvoyance</option>
+    <option value="remoteViewing">Remote Viewing</option>
+</select>
+
+<h3> Ethereal Interface </h3>
+<label for="etherealInteractionLevel">Interaction Level:</label>
+<input type="range" id="etherealInteractionLevel" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/circuit-board-564815_1280.jpg" style="width: 100%; height: 50px;">
+<label for="etherealFocus">Focus Area:</label>
+<input type="text" id="etherealFocus" placeholder="e.g., specific entities, energies">
+
+<script>
+    // Function to handle input changes
+    function handleInputChange(event) {
+        var value = event.target.value;
+        var id = event.target.id;
+
+        console.log(id + " value: " + value);
+
+        // Here you can add code to handle the changes according to the feature
+        // For example, send the value to a backend server, or update a visualization
+    }
+
+    // Attach event listeners to all input elements
+    document.querySelectorAll('input, select').forEach(function(input) {
+        input.addEventListener('input', handleInputChange);
+    });
+</script>
+           
+           
+           <h3> Virtual Reality Radionics </h3>
+<label for="vrRadionicsIntensity">VR Radionics Intensity:</label>
+<input type="range" id="vrRadionicsIntensity" min="0" max="100" value="50">
+<label for="vrEnvironment">VR Environment:</label>
+<input type="text" id="vrEnvironment" placeholder="e.g., immersive, simulated">
+
+<h3> Artificial Intelligence Assistant </h3>
+<label for="aiAssistanceLevel">AI Assistance Level:</label>
+<input type="range" id="aiAssistanceLevel" min="0" max="100" value="50">
+<label for="aiFocus">AI Focus Area:</label>
+<input type="text" id="aiFocus" placeholder="e.g., optimization, guidance">
+
+<h3> Holographic Witness Generator </h3>
+<label for="holographicWitnesses">Number of Holographic Witnesses:</label>
+<input type="number" id="holographicWitnesses" min="1" max="10" value="1">
+<label for="witnessDetail">Witness Detail Level:</label>
+<select id="witnessDetail">
+    <option value="basic">Basic</option>
+    <option value="intermediate">Intermediate</option>
+    <option value="advanced">Advanced</option>
+</select>
+
+<h3> Radionic Music Player </h3>
+<label for="radionicMusicVolume">Music Volume:</label>
+<input type="range" id="radionicMusicVolume" min="0" max="100" value="50">
+<label for="musicFrequency">Frequency:</label>
+<input type="text" id="musicFrequency" placeholder="e.g., 528 Hz, 432 Hz">
+
+<h3> Portable Radionics Device </h3>
+<label for="portableDevicePower">Device Power Level:</label>
+<input type="range" id="portableDevicePower" min="0" max="100" value="50">
+<label for="deviceMode">Device Mode:</label>
+<select id="deviceMode">
+    <option value="standard">Standard</option>
+    <option value="enhanced">Enhanced</option>
+    <option value="powerSave">Power Save</option>
+</select>
+
+<h3> Voice-Activated Radionics </h3>
+<label for="voiceCommandSensitivity">Voice Command Sensitivity:</label>
+<input type="range" id="voiceCommandSensitivity" min="0" max="100" value="50">
+<label for="voiceCommandList">Voice Commands:</label>
+<textarea id="voiceCommandList" rows="3" placeholder="e.g., activate, deactivate"></textarea>
+
+<h3> Gesture-Controlled Radionics </h3>
+<label for="gestureSensitivity">Gesture Sensitivity:</label>
+<input type="range" id="gestureSensitivity" min="0" max="100" value="50">
+<label for="gestureTypes">Gesture Types:</label>
+<input type="text" id="gestureTypes" placeholder="e.g., swipe, pinch">
+
+<h3> Biometric Security </h3>
+<label for="biometricMethod">Biometric Method:</label>
+<select id="biometricMethod">
+    <option value="fingerprint">Fingerprint</option>
+    <option value="facialRecognition">Facial Recognition</option>
+</select>
+<label for="securityLevel">Security Level:</label>
+<input type="range" id="securityLevel" min="0" max="100" value="50">
+
+<h3> Energy Transmutation Tool </h3>
+<label for="energyTransmutationLevel">Transmutation Level:</label>
+<input type="range" id="energyTransmutationLevel" min="0" max="100" value="50"><img src="https://raw.githubusercontent.com/MysticWaveTech/Tsiddo/main/cpu-1653360_1280.jpg" style="width: 100%; height: 25px;">
+<label for="transmutationType">Transmutation Type:</label>
+<input type="text" id="transmutationType" placeholder="e.g., negative to positive">
+</div>
+<h3> Universal Frequency Generator </h3>
+<label for="universalFrequency">Desired Frequency:</label>
+<input type="text" id="universalFrequency" placeholder="e.g., 100 Hz, 10 kHz">
+<label for="frequencyRange">Frequency Range:</label>
+<input type="range" id="frequencyRange" min="0" max="100000" value="5000">
+           
+           
+<div class="form-group full-width">
+    <button type="button" id="startSession" class="btn">Start Radionics Session</button>
+    
+    
+   <script> document.getElementById('startSession').addEventListener('click', function() {
+    const frequency = parseFloat(document.getElementById('frequency').value);
+
+
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+    oscillator.connect(audioContext.destination);
+    oscillator.start();
+
+    const video = document.getElementById('radionicsVideo');
+    video.style.display = 'block';
+    video.play();
+});
+
+document.getElementById('playSound').addEventListener('click', function() {
+    const frequency = parseFloat(document.getElementById('frequency').value);
+
+
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+    oscillator.connect(audioContext.destination);
+    oscillator.start();
+});</script>
+    
+    
+</div>
+<br><br>
+<video id="radionicsVideo" src="https://github.com/MysticWaveTech/Tsiddo/raw/main/54859-479655524_small.mp4" loop style="display: none; width: 100%;"></video>
+
+<script>
+    document.getElementById('startSession').addEventListener('click', function() {
+    var videoElement = document.getElementById('radionicsVideo');
+    const frequency = parseFloat(document.getElementById('frequency').value);
+
+    // Initialize the AudioContext and Oscillator
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    
+    if (!isNaN(frequency)) {
+        // If frequency is valid, play sound
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+        oscillator.connect(audioContext.destination);
+        oscillator.start();
+    } else {
+        // If no valid frequency, just pause the sound
+        oscillator.disconnect();
+    }
+
+    // Show the video and play it
+    videoElement.style.display = 'block';
+    videoElement.play();
+
+    // Stop the oscillator when the video ends (if sound is playing)
+    videoElement.addEventListener('ended', function() {
+        if (!isNaN(frequency)) {
+            oscillator.stop();
+        }
+    });
+});
+</script></div>           
+           </div>
+           </div>
+</body>
+</html>
